@@ -14,8 +14,8 @@ func main() {
 	srv := &http.Server{
 		Addr:         fmt.Sprintf(":%d", PORT),
 		Handler:      http.HandlerFunc(health.CheckHealth),
-		ReadTimeout:  10 * time.Second,
-		WriteTimeout: 10 * time.Second,
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 5 * time.Second,
 	}
 	fmt.Println("🟧 handler GET /")
 	err := srv.ListenAndServe()
