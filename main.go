@@ -11,10 +11,9 @@ const PORT = 8080
 
 func main() {
 	http.HandleFunc("/", health.CheckHealth)
-	fmt.Println("starting handler GET /")
+	fmt.Println("🟧 handler GET /")
 	err := http.ListenAndServe(fmt.Sprintf(":%d", PORT), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("🟧 logging")
 }

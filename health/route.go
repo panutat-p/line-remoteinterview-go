@@ -7,6 +7,16 @@ import (
 )
 
 func CheckHealth(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "", http.StatusNotFound)
+		return
+	}
+
+	if r.URL.Path != "/" {
+		http.Error(w, "", http.StatusNotFound)
+		return
+	}
+
 	res := Health{
 		Message: "healthy",
 	}
